@@ -12,10 +12,6 @@ N/A
 
 Managers must click on the "Add Employees" button and enter the employee's first name, last name, and salary when prompted. Managers are able to add as many employees as needed. 
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
-
 ## Credits
 
 Starter code for this repo was provided by SMU for their coding bootcamp.
