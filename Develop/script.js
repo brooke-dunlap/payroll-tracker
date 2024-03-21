@@ -1,47 +1,57 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-const employee = {
-  firstName: "",
-  lastName: "",
-  salary: "",
-}
-
-let employeesArray = [];
+const employeesArray= [];
 
 // Collect employee data
-const collectEmployees = function() {
+function collectEmployees() {
   // TODO: Get user input to create and return an array of employee objects
-  const fName = prompt("Enter first name:");
-  const lName = prompt("Enter last name:");
-  const sal = prompt("Enter salary:");  
+  while (true){
 
-  employee.firstName = fName;
-  employee.lastName = lName;
-  employee.salary = sal;
+    const employees = {};
+  
+    employees.firstName= prompt("Enter first name:");
+    employees.lastName = prompt("Enter last name:");
+    const sal = prompt("Enter salary:");  
 
- employeesArray.push(employee);
+    if (isNaN(sal)){
+     sal = 0;
+    }
 
+    employees.salary = sal;
+    employeesArray.push(employees);
 
-return;
+    const addEmployee = prompt("Do you want to add another employee?");
+    addEmployee.toLowerCase;
+
+   if (addEmployee !== "yes"){
+     break;
+    }
+  }
+  return employees;
 }
 
 collectEmployees();
-const addEmployee = prompt("Do you want to add another employee?");
-addEmployee.toLocaleLowerCase;
 
-while (addEmployee == "yes"){
-  collectEmployees();
-}
-
-console.log(employee);
+console.log(employees);
 console.log(employeesArray);
+
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-  const avgSal = '';
-  console.log(avgSal);
+  let totalSalary = 0;
+  let numOfEmployees = employeesArray.length;
+/*for (i = 0; i <employeesArray.length; i++){
+  totalSalary += employees.salary;
+}*/
+  employeesArray.forEach(employees => {
+    totalSalary += employees.salary;
+  });
+
+  const avgSalary = totalSalary / numOfEmployees;
+
+  console.log("The average salary is: $ ", avgSalary, ". The number of employees is: ", numOfEmployees, ".");
 }
 
 // Select a random employee
